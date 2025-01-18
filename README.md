@@ -7,44 +7,37 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+# React TypeScript (TSX) Project Setup Guide
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+This guide outlines the steps to set up and run the React TypeScript project.
 
-- Configure the top-level `parserOptions` property like this:
+## Prerequisites
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Ensure you have the following installed:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- Node.js and npm (latest version)
+- A package manager like npm or Yarn (used in this guide)
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+---
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Steps to Set Up the Project
+
+1. **Install Dependencies**
+
+   ```bash
+   npm install
+   ```
+
+2. **Verify TypeScript Configuration**
+
+   Ensure `tsconfig.json` exists in the root directory. Modify it if needed to match project requirements.
+
+3. **Start the Development Server**
+
+   ```bash
+   npm run dev
+   ```
+
+   This will start the React app in development mode. Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
+
+Follow these steps to get your React TypeScript project up and running efficiently!
